@@ -2,9 +2,16 @@ provider "kubernetes" {
   config_path = "~/.kube/config"  # Adjust this if your kubeconfig is in a different path
 }
 
+resource "kubernetes_namespace" "react_webapp" {
+  metadata {
+    name = "react-webapp"
+  }
+}
+
 resource "kubernetes_deployment" "react_app" {
   metadata {
     name = "react-app-deployment"
+    namespace = "react-webapp"
     labels = {
       app = "react-app"
     }
@@ -27,7 +34,7 @@ resource "kubernetes_deployment" "react_app" {
 
       spec {
         container {
-          image = "roche12/react-app:latest"
+          image = "roche12/react-wapp:latest"
           name  = "react-app-container"
           port {
             container_port = 80
