@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: react-app-container
-        image: roche12/react-app:latest
+        image: roche12/react-webapp:latest
         ports:
         - containerPort: 80
         resources:
