@@ -1,0 +1,603 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-10-27T15:40:41Z"
+    generateName: react-app-deployment-794dd8dcd6-
+    labels:
+      app: react-app
+      pod-template-hash: 794dd8dcd6
+    name: react-app-deployment-794dd8dcd6-ffcdk
+    namespace: react-webapp
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: react-app-deployment-794dd8dcd6
+      uid: cca05c20-2f90-401c-9da0-8851536fec1d
+    resourceVersion: "16753"
+    uid: 08abaaae-9352-47ee-8322-9eb06b088621
+  spec:
+    automountServiceAccountToken: true
+    containers:
+    - image: roche12/react-app:latest
+      imagePullPolicy: Always
+      name: react-app-container
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: 500m
+          memory: 256Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-pxqtj
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    shareProcessNamespace: false
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-pxqtj
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:44Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:41Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:44Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:44Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:41Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://e01018f7e8bd4592efb33f1cdace3e9d6942b7c308e1692d7b9ad064adb05e32
+      image: roche12/react-app:latest
+      imageID: docker-pullable://roche12/react-app@sha256:0fd907a7a89260e5a9c0d26f5d9c7a734c7afaff4944720be07b22a4ee414dff
+      lastState: {}
+      name: react-app-container
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-10-27T15:40:44Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-pxqtj
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.49.2
+    hostIPs:
+    - ip: 192.168.49.2
+    phase: Running
+    podIP: 10.244.0.46
+    podIPs:
+    - ip: 10.244.0.46
+    qosClass: Burstable
+    startTime: "2024-10-27T15:40:41Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-10-27T15:40:45Z"
+    generateName: react-app-deployment-794dd8dcd6-
+    labels:
+      app: react-app
+      pod-template-hash: 794dd8dcd6
+    name: react-app-deployment-794dd8dcd6-lr9c6
+    namespace: react-webapp
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: react-app-deployment-794dd8dcd6
+      uid: cca05c20-2f90-401c-9da0-8851536fec1d
+    resourceVersion: "16795"
+    uid: c68db80c-86b4-41f8-aaf1-591092cf1625
+  spec:
+    automountServiceAccountToken: true
+    containers:
+    - image: roche12/react-app:latest
+      imagePullPolicy: Always
+      name: react-app-container
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: 500m
+          memory: 256Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-7mm69
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    shareProcessNamespace: false
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-7mm69
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:50Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:45Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:50Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:50Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-10-27T15:40:45Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://e634a21c6222da645ed94ac958cd37f51db9ddd1696bbf5b9c526124fe24c181
+      image: roche12/react-app:latest
+      imageID: docker-pullable://roche12/react-app@sha256:0fd907a7a89260e5a9c0d26f5d9c7a734c7afaff4944720be07b22a4ee414dff
+      lastState: {}
+      name: react-app-container
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-10-27T15:40:49Z"
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-7mm69
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.49.2
+    hostIPs:
+    - ip: 192.168.49.2
+    phase: Running
+    podIP: 10.244.0.47
+    podIPs:
+    - ip: 10.244.0.47
+    qosClass: Burstable
+    startTime: "2024-10-27T15:40:45Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2024-10-27T05:37:03Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    name: kubernetes
+    namespace: react-webapp
+    resourceVersion: "197"
+    uid: c5def3aa-7106-496c-a484-aae66028b0ef
+  spec:
+    clusterIP: 10.96.0.1
+    clusterIPs:
+    - 10.96.0.1
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2024-10-27T15:14:31Z"
+    name: react-app-service
+    namespace: react-webapp
+    resourceVersion: "15061"
+    uid: cae660f0-89e8-408d-82e9-9a3e1d2a1d85
+  spec:
+    clusterIP: 10.98.140.188
+    clusterIPs:
+    - 10.98.140.188
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 31137
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: react-app
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2024-10-27T06:47:29Z"
+    name: react-service
+    namespace: react-webapp
+    resourceVersion: "3791"
+    uid: 157c11ff-ac3d-48a9-a8b7-9280f21e295f
+  spec:
+    clusterIP: 10.102.84.234
+    clusterIPs:
+    - 10.102.84.234
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 30001
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: react-app
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "3"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"react-app-deployment","namespace":"react-webapp"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"react-app"}},"template":{"metadata":{"labels":{"app":"react-app"}},"spec":{"containers":[{"image":"roche12/react-app:latest","name":"react-app-container","ports":[{"containerPort":80}],"resources":{"limits":{"cpu":"1","memory":"512Mi"},"requests":{"cpu":"500m","memory":"256Mi"}}}]}}}}
+    creationTimestamp: "2024-10-27T15:14:31Z"
+    generation: 3
+    labels:
+      app: react-app
+    name: react-app-deployment
+    namespace: react-webapp
+    resourceVersion: "16813"
+    uid: b5ad6406-4a29-43ef-a3e0-a33dd8f92b87
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: react-app
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: react-app
+      spec:
+        automountServiceAccountToken: true
+        containers:
+        - image: roche12/react-app:latest
+          imagePullPolicy: Always
+          name: react-app-container
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi
+            requests:
+              cpu: 500m
+              memory: 256Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        enableServiceLinks: true
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        shareProcessNamespace: false
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2024-10-27T15:33:45Z"
+      lastUpdateTime: "2024-10-27T15:33:45Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2024-10-27T15:31:02Z"
+      lastUpdateTime: "2024-10-27T15:40:50Z"
+      message: ReplicaSet "react-app-deployment-794dd8dcd6" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 3
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2024-10-27T15:14:31Z"
+    generation: 3
+    labels:
+      app: react-app
+      pod-template-hash: 5b94b46b8f
+    name: react-app-deployment-5b94b46b8f
+    namespace: react-webapp
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: react-app-deployment
+      uid: b5ad6406-4a29-43ef-a3e0-a33dd8f92b87
+    resourceVersion: "16395"
+    uid: c9350716-8024-45da-bef2-52b025d9288b
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: react-app
+        pod-template-hash: 5b94b46b8f
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: react-app
+          pod-template-hash: 5b94b46b8f
+      spec:
+        automountServiceAccountToken: true
+        containers:
+        - image: your-dockerhub-username/react-app:latest
+          imagePullPolicy: Always
+          name: react-app-container
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        enableServiceLinks: true
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        shareProcessNamespace: false
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "3"
+    creationTimestamp: "2024-10-27T15:40:41Z"
+    generation: 2
+    labels:
+      app: react-app
+      pod-template-hash: 794dd8dcd6
+    name: react-app-deployment-794dd8dcd6
+    namespace: react-webapp
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: react-app-deployment
+      uid: b5ad6406-4a29-43ef-a3e0-a33dd8f92b87
+    resourceVersion: "16800"
+    uid: cca05c20-2f90-401c-9da0-8851536fec1d
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: react-app
+        pod-template-hash: 794dd8dcd6
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: react-app
+          pod-template-hash: 794dd8dcd6
+      spec:
+        automountServiceAccountToken: true
+        containers:
+        - image: roche12/react-app:latest
+          imagePullPolicy: Always
+          name: react-app-container
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi
+            requests:
+              cpu: 500m
+              memory: 256Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        enableServiceLinks: true
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        shareProcessNamespace: false
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 2
+    readyReplicas: 2
+    replicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "2"
+    creationTimestamp: "2024-10-27T15:33:35Z"
+    generation: 4
+    labels:
+      app: react-app
+      pod-template-hash: bc7668797
+    name: react-app-deployment-bc7668797
+    namespace: react-webapp
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: react-app-deployment
+      uid: b5ad6406-4a29-43ef-a3e0-a33dd8f92b87
+    resourceVersion: "16812"
+    uid: 53b4355e-c43b-4d88-8406-48cfb00ea992
+  spec:
+    replicas: 0
+    selector:
+      matchLabels:
+        app: react-app
+        pod-template-hash: bc7668797
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: react-app
+          pod-template-hash: bc7668797
+      spec:
+        automountServiceAccountToken: true
+        containers:
+        - image: roche12/react-app:latest
+          imagePullPolicy: Always
+          name: react-app-container
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        enableServiceLinks: true
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        shareProcessNamespace: false
+        terminationGracePeriodSeconds: 30
+  status:
+    observedGeneration: 4
+    replicas: 0
+kind: List
+metadata:
+  resourceVersion: ""
